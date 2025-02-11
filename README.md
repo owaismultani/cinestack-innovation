@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Cinestack Innovation
 
-## Getting Started
+Cinestack Innovation is a web application that showcases trending movies using the TMDB API. This project is built with Next.js and styled with Tailwind CSS.
 
-First, run the development server:
+## Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Before you begin, ensure you have met the following requirements:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- You have installed Node.js and npm.
+- You have a TMDB account to obtain an API key.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Setup
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Follow these steps to set up the project locally:
 
-## Learn More
+1. **Clone the repository:**
 
-To learn more about Next.js, take a look at the following resources:
+   ```bash
+   git clone https://github.com/owaismultani/cinestack-innovation.git
+   cd cinestack-innovation
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. **Install dependencies:**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   ```bash
+   npm install
+   ```
 
-## Deploy on Vercel
+3. **Create a `.env` file:**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   Copy the `.env.example` file to `.env` and fill in your TMDB API key.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   ```bash
+   cp .env.example .env
+   ```
+
+   Edit the `.env` file to include your TMDB API key:
+
+   ```
+   NEXT_PUBLIC_TMDB_API_KEY=your_tmdb_api_key
+   ```
+
+4. **Run the development server:**
+
+   ```bash
+   npm run dev
+   ```
+
+   Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## Obtaining the TMDB API Key
+
+1. **Sign up for a TMDB account:**
+
+   Visit [TMDB](https://www.themoviedb.org/) and create an account if you don't have one.
+
+2. **Navigate to the API section:**
+
+   Once logged in, go to your account settings and find the API section.
+
+3. **Create an API key:**
+
+   Follow the instructions to create a new API key. You will need to provide some basic information about your application.
+
+4. **Copy the API key:**
+
+   Once your API key is generated, copy it and paste it into your `.env` file as shown in the setup instructions.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- [TMDB](https://www.themoviedb.org/) for providing the movie data.
+- [Next.js](https://nextjs.org/) for the framework.
+- [Tailwind CSS](https://tailwindcss.com/) for styling.
