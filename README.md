@@ -48,6 +48,10 @@ Follow these steps to set up the project locally:
 
    Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## Live Demo
+
+You can view a live demo of the application at [Cinestack Innovation Demo](https://ci.owaism.xyz/).
+
 ## Obtaining the TMDB API Key
 
 1. **Sign up for a TMDB account:**
