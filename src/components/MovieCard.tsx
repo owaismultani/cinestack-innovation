@@ -13,9 +13,14 @@ import { AiFillStar } from "react-icons/ai";
 import { FaArrowTrendUp } from "react-icons/fa6";
 import { FaImdb } from "react-icons/fa";
 import Link from "next/link";
-import { MovieProps } from "@/types";
+import { Movie } from "@/types";
+import TruncatedText from "./TruncatedText";
 
-function MovieCardDetail({ movie }: { movie: MovieProps }) {
+export interface MovieProps {
+  movie: Movie;
+}
+
+function MovieCardDetail({ movie }: MovieProps ) {
   const details = [{ label: "Release Date", value: movie.release_date }];
   return (
     <>
@@ -30,40 +35,42 @@ function MovieCardDetail({ movie }: { movie: MovieProps }) {
             )
         )}
       </ul>
-      <p className="mt-2 line-clamp-3 text-sm text-secondary-400">
-        {movie.overview}
-      </p>
+      <TruncatedText 
+        className="mt-2 text-sm text-gray-400" 
+        text={movie.overview} 
+        maxLength={100} 
+      />
     </>
   );
 }
 
-export default function MovieCard({ movie }: { movie: MovieProps }) {
+export default function MovieCard({ movie }: MovieProps) {
   const bgUrl = `${process.env.NEXT_PUBLIC_MOVIE_IMAGE_BASE_URL}/w500/${movie.poster_path}`;
 
   return (
     <Card
-      className="container max-w-sm bg-cover bg-center bg-blend-overlay bg-black/40 text-secondary rounded-xl"
+      className="group/card container max-w-sm bg-cover bg-center bg-blend-overlay bg-black/40 text-secondary rounded-xl hover:bg-black/60"
       style={{
         backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 1)), url(${bgUrl})`,
       }}
     >
       <CardHeader className="h-56 flex flex-row justify-end items-start gap-1 space-y-0 p-4">
         {movie.vote_average > 0 && (
-          <Badge variant="secondary" className="h-6">
+          <Badge className="h-6">
             <AiFillStar className="text-yellow-500 mr-1" />{" "}
             {movie.vote_average.toFixed(1)} / 10
           </Badge>
         )}
 
         {movie.popularity && (
-          <Badge variant="secondary" className="h-6">
+          <Badge className="h-6">
             <FaArrowTrendUp className="text-blue-500 mr-1" />{" "}
             {movie.popularity.toFixed(0)}
           </Badge>
         )}
       </CardHeader>
       <CardContent className=" p-4">
-        <CardTitle className="line-clamp-1">{movie.title}</CardTitle>
+        <CardTitle className="text-xl line-clamp-1">{movie.title}</CardTitle>
         <CardDescription>{/* TODO */}</CardDescription>
         <MovieCardDetail movie={movie} />
       </CardContent>

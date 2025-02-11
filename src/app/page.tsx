@@ -2,10 +2,10 @@
 import MovieCard from "@/components/MovieCard";
 
 import { useState, useEffect } from "react";
-import { MovieProps } from "@/types";
+import { Movie } from "@/types";
 
 export default function Home() {
-  const [movies, setMovies] = useState<MovieProps[]>([]);
+  const [movies, setMovies] = useState<Movie[]>([]);
 
   async function fetchMovies() {
     try {
