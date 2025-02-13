@@ -27,7 +27,7 @@ export default function TruncatedText({text, maxLength, className}: TruncatedTex
         >
             <p>
                 {isExpanded ? text : `${text.slice(0, maxLength)}...`}
-                <Button className="p-1 text-primary-foreground" variant="link" onClick={toggleExpand}>
+                <Button className="p-1 text-white" variant="link" onClick={toggleExpand}>
                     {isExpanded ? "Read less" : "Read more"}
                 </Button>
             </p>
