@@ -51,7 +51,7 @@ export function Header({ onSearch }: HeaderProps) {
               transition={{ type: "spring", stiffness: 300 }}
             >
               <Link
-                href={`/${item.toLowerCase().replace(" ", "-")}`}
+                href="#" // {`/${item.toLowerCase().replace(" ", "-")}`}
                 className="relative text-sm font-medium transition-all before:absolute before:-bottom-1 before:left-0 before:w-0 before:h-0.5 before:bg-gradient-to-r from-blue-500 to-purple-500 before:transition-all before:duration-300 hover:before:w-full hover:text-primary"
               >
                 {item}
@@ -135,7 +135,7 @@ export function Header({ onSearch }: HeaderProps) {
                 {["Movies", "TV Shows", "Watchlist"].map((item) => (
                   <Link
                     key={item}
-                    href={`/${item.toLowerCase().replace(" ", "-")}`}
+                    href="#" // {`/${item.toLowerCase().replace(" ", "-")}`}
                     className="text-sm font-medium transition-colors hover:text-primary"
                   >
                     {item}

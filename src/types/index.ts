@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export interface Movie {
   id: number;
   title: string;
@@ -24,4 +25,5 @@ export interface Movie {
   cast?: { id: number; name: string; character: string; profile_path: string }[];
   reviews?: { id: string; author: string; content: string; author_details: { rating: number } }[];
   similarMovies?: { id: number; title: string; poster_path: string }[];
+  watchProviders?: { results: { [key: string]: { flatrate?: any[]; rent?: any[]; buy?: any[] } } };
 }
